@@ -56,17 +56,9 @@
                       {{post.content}}
                     </p>
                     <div class="blog-tags">
-                      <div class="tag">Tag content</div>
-                      <div class="tag">Tag content</div>
-                      <div class="tag">Tag content</div>
-                      <div class="tag">Tag content</div>
-                      <div class="tag">Tag content</div>
-                      <div class="tag">Tag content</div>
-                      <div class="tag">Tag content</div>
-                      <div class="tag">Tag content</div>
-                      <div class="tag">Tag content</div>
-                      <div class="tag">Tag content</div>
-                      <div class="tag">Tag content</div>
+                    {% for tag in post.tags.all  %}
+                      <div class="tag">{{tag.name}}</div>
+                    {% endfor %}
                     </div>
                     <div class="social-share">
                       <div class="reactions">
