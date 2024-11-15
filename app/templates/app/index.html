@@ -1,0 +1,138 @@
+{% extends "base.html" %}
+{% block title %}Blog | Welcome {% endblock  %}
+{% block content%} 
+    <main class="sp">
+      <div class="container">
+        <center>
+          <div class="search-bar">
+            <input type="text" placeholder="Search" />
+            <div class="animated-search" onclick="searchbar()">
+              <i class="uil uil-search"></i>
+            </div>
+          </div>
+          <div class="typo">
+            <h1 class="title">Website blog title</h1>
+            <p>
+              Lorem ipsum began as scrambled, nonsensical Latin derived from
+              Cicero's 1st-century BC text De Finibus Bonorum et Malorum.
+            </p>
+          </div>
+          <div class="newsletter">
+            <form method="POST">
+              <input
+                type="email"
+                name="email"
+                maxlength="100"
+                placeholder="Enter your email"
+                required=""
+                id="id_email"
+              />
+              <button class="btn btn-primary">Subscribe</button>
+            </form>
+          </div>
+        </center
+        main>
+    <section class="sp">
+      <div class="container">
+        <div class="grid-2">
+          <div class="post-img">
+            <img src="images/post.png" alt="" />
+          </div>
+          <div class="post-content">
+            <div class="cetagory">
+              <p>Category name</p>
+            </div>
+            <h1>
+              Lorem ipsum began as scrambled, nonsensical Latin derived from
+              Cicero's 1st-century BC text.
+            </h1>
+            <p class="des">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure
+              ullam animi repellat non ut delectus culpa! Iste quia corporis
+              illum doloribus facilis quo totam eveniet sapiente odit
+              cupiditate? Cumque, nam?
+            </p>
+            <a class="learn" href="#"
+              >Learn more <span class="material-icons"> trending_flat </span></a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="sp">
+      <div class="container">
+        <h1 class="sec-title">Top blogs</h1>
+        <div class="grid-3">
+            {% for post in posts  %}
+          <!-- card -->
+          <a href="{% url "post_page" post.slug %}">
+            <div class="card">
+              <div class="post-img">
+                <img src="{{post.image.url}}" alt="" />
+                <div class="tag">Tag name</div>
+              </div>
+              <div class="card-content">
+                <h3>
+                  {{post.title}}
+                </h3>
+                <div class="author">
+                  <div class="profile-pic">
+                    <img src="images/author.svg" alt="" />
+                  </div>
+                  <div class="details">
+                    <p>Author name</p>
+                    <small>{{post.last_updated|date}}</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+         
+          <!-- card end-->
+          {% endfor %}
+        </div>
+        <center>
+          <a href=""><button class="btn btn-primary rounded view">
+            View more <span class="material-icons"> trending_flat </span>
+          </button></a>
+        </center>
+      </div>
+    </section>
+    <section class="sp">
+      <div class="container">
+        <h1 class="sec-title">New blogs</h1>
+        <div class="grid-3">
+            {% for post in posts  %}
+          <!-- card -->
+          <a href="{% url "post_page" post.slug %}">
+            <div class="card">
+              <div class="post-img">
+                <img src="{{post.image.url}}" alt="" />
+                <div class="tag">Tag name</div>
+              </div>
+              <div class="card-content">
+                <h3>
+                  {{post.title}}
+                </h3>
+                <div class="author">
+                  <div class="profile-pic">
+                    <img src="images/author.svg" alt="" />
+                  </div>
+                  <div class="details">
+                    <p>Author name</p>
+                    <small>{{post.last_updated | date}}</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <!-- card end-->
+          {% endfor %}
+        </div>
+        <center>
+          <a href=""><button class="btn btn-primary rounded view">
+            View more <span class="material-icons"> trending_flat </span>
+          </button></a>
+        </center>
+      </div>
+    </section>
+{% endblock content %}
