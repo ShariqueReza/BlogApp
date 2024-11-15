@@ -1,0 +1,461 @@
+{% extends "base.html" %}
+{% block title %}Blog | The Super Blog{% endblock title %}
+{% block content %}   
+      <div class="container">
+        <div class="layout">
+          <!-- left layout -->
+          <div class="left">
+            <div class="page-top">
+              <div class="top flex">
+                <div class="page-name">
+                  <a href="#" class="learn">
+                    <span class="material-icons"> keyboard_return </span> Go
+                    back
+                  </a>
+                  <h1>Blog</h1>
+                </div>
+              </div>
+            </div>
+
+            <center>
+              <div class="typo">
+                <h1 class="title blog-title">
+                  {{post.title}}
+                </h1>
+                <div class="timeline">
+                  <div class="track">
+                    <i class="uil uil-clock"></i>
+                    <p class="time">{{post.last_updated}}</p>
+                  </div>
+                  <div class="track">
+                    <i class="uil uil-users-alt"></i>
+                    <p class="view-count">2500+ views</p>
+                  </div>
+                  <div class="track">
+                    <form action="" method="POST">
+                      <button type="submit" class="btn btn-info">
+                        <i class="uil uil-bookmark-full"></i>
+                        <p class="bookmark">Bookmark</p>
+                        <!-- REMOVE BOOKMARK
+                          <i class="fa-solid fa-bookmark"></i> -->
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </center>
+            <section class="mt">
+              <div class="container">
+                <!-- blog post -->
+                <div class="blog-post">
+                  <div class="post-img blog-img">
+                    <img src="{{post.image.url}}" alt="" />
+                  </div>
+                  <div class="blog-post-content">
+                    <p>
+                      {{post.content}}
+                    </p>
+                    <div class="blog-tags">
+                      <div class="tag">Tag content</div>
+                      <div class="tag">Tag content</div>
+                      <div class="tag">Tag content</div>
+                      <div class="tag">Tag content</div>
+                      <div class="tag">Tag content</div>
+                      <div class="tag">Tag content</div>
+                      <div class="tag">Tag content</div>
+                      <div class="tag">Tag content</div>
+                      <div class="tag">Tag content</div>
+                      <div class="tag">Tag content</div>
+                      <div class="tag">Tag content</div>
+                    </div>
+                    <div class="social-share">
+                      <div class="reactions">
+                        <div class="likes">
+                          <i class="uil uil-heart"></i> <span>200</span>
+                        </div>
+                        <div class="total-comments">
+                          <i class="uil uil-comment-alt"></i>
+                          <span>10</span>
+                        </div>
+                      </div>
+                      <div class="share">
+                        <div class="social">
+                          <a href="#">
+                            <i class="fa-brands fa-facebook-f"></i>
+                          </a>
+                          <a href="#">
+                            <i class="fa-brands fa-instagram"></i>
+                          </a>
+                          <a href="#">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                          </a>
+                          <a href="#">
+                            <i class="fa-brands fa-twitter"></i>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- comments -->
+                    <div class="user-comment">
+                      <div class="author">
+                        <div class="profile-pic">
+                          <img src="../images/author.svg" alt="" />
+                        </div>
+                        <div class="details">
+                          <p>Author name</p>
+                          <small>June 20, 2022</small>
+                        </div>
+                      </div>
+                      <div class="comment-sec-main">
+                        <div class="comment-sec">
+                          <div class="comment">
+                            <p>
+                              Lorem ipsum dolor sit amet consectetur adipisicing
+                              elit. Tempora magnam minima harum, dignissimos
+                              ipsa vero sequi ipsam, distinctio quisquam quo
+                              cupiditate sed recusandae expedita quod iste
+                              maiores rerum. Eaque, dignissimos.
+                            </p>
+                          </div>
+                          <div class="reply">
+                            <button onclick="toggleDiv(this)">Reply</button>
+                          </div>
+                          <div class="comment-box" id="comment-reply-box">
+                            <h3>Reply to post</h3>
+                            <p>
+                              Your email address will not be published. Required fields
+                              are marked<span>*</span>
+                            </p>
+                            <form method="POST">
+                              <textarea name="content" cols="40" rows="10" placeholder="Type your comment...." required id="id_content">
+      </textarea>
+                              <div class="grid-3">
+                                <input type="text" name="name" maxlength="200" placeholder="Name" required id="id_name">
+                                <input type="text" name="email" maxlength="200" placeholder="Email" required id="id_email">
+                                <input type="text" name="website" maxlength="200" placeholder="Website" id="id_website">
+                              </div>
+              
+                              <button class="btn btn-primary rounded">
+                                Post Reply
+                              </button>
+                            </form>
+                          </div>  
+
+                        </div>
+                        
+                        <div class="public-reply">
+                          <div class="author">
+                            <div class="profile-pic">
+                              <img src="../images/author.svg" alt="" />
+                            </div>
+                            <div class="details">
+                              <p>Author name</p>
+                              <small>June 20, 2022</small>
+                            </div>
+                          </div>
+                          <div class="comment">
+                            <p>
+                              Lorem ipsum dolor sit amet consectetur adipisicing
+                              elit. Tempora magnam minima harum, dignissimos
+                            </p>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                    <!-- user comment -->
+                    <div class="user-comment">
+                      <div class="author">
+                        <div class="profile-pic">
+                          <img src="../images/author.svg" alt="" />
+                        </div>
+                        <div class="details">
+                          <p>Author name</p>
+                          <small>June 20, 2022</small>
+                        </div>
+                      </div>
+                      <div class="comment-sec-main">
+                        <div class="comment-sec">
+                          <div class="comment">
+                            <p>
+                              Lorem ipsum dolor sit amet consectetur adipisicing
+                              elit. Tempora magnam minima harum, dignissimos
+                              ipsa vero sequi ipsam, distinctio quisquam quo
+                              cupiditate sed recusandae expedita quod iste
+                              maiores rerum. Eaque, dignissimos.
+                            </p>
+                          </div>
+                          <div class="reply">
+                            <button onclick="toggleDiv(this)">Reply</button>
+                          </div>
+                        </div>
+                        <div class="comment-box" id="comment-reply-box">
+                          <h3>Reply to post</h3>
+                          <p>
+                            Your email address will not be published. Required fields
+                            are marked<span>*</span>
+                          </p>
+                          <form method="POST">
+                            <textarea name="content" cols="40" rows="10" placeholder="Type your comment...." required id="id_content">
+    </textarea>
+                            <div class="grid-3">
+                              <input type="text" name="name" maxlength="200" placeholder="Name" required id="id_name">
+                              <input type="text" name="email" maxlength="200" placeholder="Email" required id="id_email">
+                              <input type="text" name="website" maxlength="200" placeholder="Website" id="id_website">
+                            </div>
+            
+                            <button class="btn btn-primary rounded">
+                              Post Reply
+                            </button>
+                          </form>
+                        </div>  
+                      </div>
+                    </div>
+                    <!-- user comment end -->
+                    <!-- user comment -->
+                    <div class="user-comment">
+                      <div class="author">
+                        <div class="profile-pic">
+                          <img src="../images/author.svg" alt="" />
+                        </div>
+                        <div class="details">
+                          <p>Author name</p>
+                          <small>June 20, 2022</small>
+                        </div>
+                      </div>
+                      <div class="comment-sec-main">
+                        <div class="comment-sec">
+                          <div class="comment">
+                            <p>
+                              Lorem ipsum dolor sit amet consectetur adipisicing
+                              elit. Tempora magnam minima harum, dignissimos
+                              ipsa vero sequi ipsam, distinctio quisquam quo
+                              cupiditate sed recusandae expedita quod
+                              iste maiores rerum. Eaque, dignissimos.
+                            </p>
+                          </div>
+                          <div class="reply">
+                            <button onclick="toggleDiv(this)">Reply</button>
+                          </div>
+
+                          <div class="comment-box" id="comment-reply-box">
+                            <h3>Reply to post</h3>
+                            <p>
+                              Your email address will not be published. Required fields
+                              are marked<span>*</span>
+                            </p>
+                            <form method="POST">
+                              <textarea name="content" cols="40" rows="10" placeholder="Type your comment...." required id="id_content">
+      </textarea>
+                              <div class="grid-3">
+                                <input type="text" name="name" maxlength="200" placeholder="Name" required id="id_name">
+                                <input type="text" name="email" maxlength="200" placeholder="Email" required id="id_email">
+                                <input type="text" name="website" maxlength="200" placeholder="Website" id="id_website">
+                              </div>
+              
+                              <button class="btn btn-primary rounded">
+                                Post Reply
+                              </button>
+                            </form>
+                          </div>  
+                        </div>
+                      </div>
+                    </div>
+                    <!-- user comment end -->
+                  </div>
+                </div>
+                <div class="comment-box">
+                  <h3>Leave a new comment to this post</h3>
+                  <p>
+                    Your email address will not be published. Required fields
+                    are marked<span>*</span>
+                  </p>
+                  <form action="">
+                    <textarea placeholder="Type your comment...."></textarea>
+                    <div class="grid-3">
+                      <input type="text" placeholder="Name" />
+                      <input type="temail" placeholder="Email" />
+                      <input type="url" placeholder="Website (optional)" />
+                    </div>
+                    <button class="btn btn-primary rounded">
+                      Post comment
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </section>
+          </div>
+          <!-- left layout end -->
+
+          <!-- right layout -->
+          <div class="right">
+            <div class="block">
+              <h2 class="title2">Most recent</h2>
+              <div class="recent-post">
+                <div class="rounded-img">
+                  <img src="../images/post.png" alt="" />
+                </div>
+                <div class="recent-content">
+                  <h3>
+                    A blog title and other stuffs will add here, also we can
+                    incluse.
+                  </h3>
+                  <a class="learn" href="#"
+                    >Learn more
+                    <span class="material-icons"> trending_flat </span></a
+                  >
+                </div>
+              </div>
+              <div class="recent-post">
+                <div class="rounded-img">
+                  <img src="../images/post.png" alt="" />
+                </div>
+                <div class="recent-content">
+                  <h3>
+                    A blog title and other stuffs will add here, also we can
+                    incluse.
+                  </h3>
+                  <a class="learn" href="#"
+                    >Learn more
+                    <span class="material-icons"> trending_flat </span></a
+                  >
+                </div>
+              </div>
+              <div class="recent-post">
+                <div class="rounded-img">
+                  <img src="../images/post.png" alt="" />
+                </div>
+                <div class="recent-content">
+                  <h3>
+                    A blog title and other stuffs will add here, also we can
+                    incluse.
+                  </h3>
+                  <a class="learn" href="#"
+                    >Learn more
+                    <span class="material-icons"> trending_flat </span></a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="block r-blog">
+              <h2 class="title2">Related Blogs</h2>
+              <!-- card -->
+              <a href="#">
+                <div class="card">
+                  <div class="post-img">
+                    <img src="../images/post.png" alt="" />
+                    <div class="tag">Tag name</div>
+                  </div>
+                  <div class="card-content">
+                    <h3>
+                      A blog title and other stuffs will add here, also we can
+                      include.
+                    </h3>
+                    <div class="author">
+                      <div class="profile-pic">
+                        <img src="../images/author.svg" alt="" />
+                      </div>
+                      <div class="details">
+                        <p>Author name</p>
+                        <small>June 20, 2022</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <!-- card end-->
+
+              <!-- card -->
+              <a href="#">
+                <div class="card">
+                  <div class="post-img">
+                    <img src="../images/post.png" alt="" />
+                    <div class="tag">Tag name</div>
+                  </div>
+                  <div class="card-content">
+                    <h3>
+                      A blog title and other stuffs will add here, also we can
+                      include.
+                    </h3>
+                    <div class="author">
+                      <div class="profile-pic">
+                        <img src="../images/author.svg" alt="" />
+                      </div>
+                      <div class="details">
+                        <p>Author name</p>
+                        <small>June 20, 2022</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <!-- card end-->
+            </div>
+            <div class="block">
+              <h2 class="title2">Top category</h2>
+              <div class="card">
+                <h3>
+                  A blog title and other stuffs will add here, lso we can
+                  incluse.
+                </h3>
+                <p>
+                  Lorem ipsum began as scrambled, nonsensical Latin derived from
+                  Cicero's 1st-century BC text De Finibus Bonorum et Malorum.
+                </p>
+                <a class="learn" href="#"
+                  >Learn more
+                  <span class="material-icons"> trending_flat </span></a
+                >
+              </div>
+              <div class="card">
+                <h3>
+                  A blog title and other stuffs will add here, lso we can
+                  incluse.
+                </h3>
+                <p>
+                  Lorem ipsum began as scrambled, nonsensical Latin derived from
+                  Cicero's 1st-century BC text De Finibus Bonorum et Malorum.
+                </p>
+                <a class="learn" href="#"
+                  >Learn more
+                  <span class="material-icons"> trending_flat </span></a
+                >
+              </div>
+              <div class="card">
+                <h3>
+                  A blog title and other stuffs will add here, lso we can
+                  incluse.
+                </h3>
+                <p>
+                  Lorem ipsum began as scrambled, nonsensical Latin derived from
+                  Cicero's 1st-century BC text De Finibus Bonorum et Malorum.
+                </p>
+                <a class="learn" href="#"
+                  >Learn more
+                  <span class="material-icons"> trending_flat </span></a
+                >
+              </div>
+            </div>
+            <div class="block">
+              <h2 class="title2">Top Tags</h2>
+              <div class="blog-tags">
+                <div class="tag">Tag</div>
+                <div class="tag">Tag content</div>
+                <div class="tag">Tag</div>
+                <div class="tag">Tag content</div>
+                <div class="tag">Tag content</div>
+                <div class="tag">Tag</div>
+                <div class="tag">Tag content</div>
+                <div class="tag">Tag content</div>
+                <div class="tag">Tag</div>
+                <div class="tag">Tag content</div>
+                <div class="tag">Tag</div>
+              </div>
+            </div>
+          </div>
+          <!-- right layout end -->
+        </div>
+      </div>
+    
+    {% endblock content  %}
