@@ -22,3 +22,4 @@ class Post(models.Model):
     slug=models.SlugField(max_length=200,unique=True)
     image=models.ImageField(null=True,blank=True,upload_to="images/")
     tags=models.ManyToManyField(Tag,blank=True,related_name='post')
+    view_count=models.IntegerField(null=True,blank=True)
