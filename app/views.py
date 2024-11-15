@@ -9,5 +9,10 @@ def index(request):
 
 def post_page(request,slug):
     post=Post.objects.get(slug=slug)
+    if post.view_count is None:
+        post.view_count=1
+    else:
+        post.view_count=post.view_count+1
+    post.save()
     context={'post':post}
     return render(request,'app/post.html',context)
