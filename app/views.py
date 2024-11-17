@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from app.models import Post
+from app.models import Post,Comments
 from app.forms import CommentForm
 
 # Create your views here.
@@ -10,6 +10,7 @@ def index(request):
 
 def post_page(request,slug):
     post=Post.objects.get(slug=slug)
+    comments=Comments.objects.filter(post=post)
     form=CommentForm()
 
     if request.POST:
@@ -27,5 +28,5 @@ def post_page(request,slug):
     else:
         post.view_count=post.view_count+1
     post.save()
-    context={'post':post,'form':form}
+    context={'post':post,'form':form,'comments':comments}
     return render(request,'app/post.html',context)
