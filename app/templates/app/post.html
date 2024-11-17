@@ -262,7 +262,7 @@
                     Your email address will not be published. Required fields
                     are marked<span>*</span>
                   </p>
-                  <form action="POST">
+                  <form method="POST">
                     {% csrf_token %}
                     {{form.content}}
                     <div class="grid-3">

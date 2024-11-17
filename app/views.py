@@ -16,7 +16,7 @@ def post_page(request,slug):
         comment_form=CommentForm(request.POST)
         if comment_form.is_valid:
             comment=comment_form.save(commit=False)
-            postid=request.POST.get['post_id']
+            postid=request.POST.get('post_id')
             post=Post.objects.get(id=postid)
             comment.post=post
             comment.save()
