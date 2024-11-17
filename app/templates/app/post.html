@@ -266,6 +266,7 @@
                     {% csrf_token %}
                     {{form.content}}
                     <div class="grid-3">
+                      <input type="hidden" name=post_id value="{{post.id}}">
                       {{form.name}}
                       {{form.email}}
                       {{form.website}}
