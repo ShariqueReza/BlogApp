@@ -34,4 +34,4 @@ class Comments(models.Model):
     post=models.ForeignKey(Post,on_delete=models.CASCADE)
     author=models.ForeignKey(User,on_delete=models.CASCADE,null=True,blank=True)
     #for reply of the particular comment
-    parents=models.ForeignKey('self',on_delete=models.DO_NOTHING,null=True,blank=True,related_name='replies')
+    parent=models.ForeignKey('self',on_delete=models.DO_NOTHING,null=True,blank=True,related_name='replies')
