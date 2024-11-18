@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block title %}Blog | The Super Blog{% endblock title %}
+{% load static %}
 {% block content %}   
       <div class="container">
         <div class="layout">
@@ -137,7 +138,7 @@
                         <div class="public-reply">
                           <div class="author">
                             <div class="profile-pic">
-                              <img src="../images/author.svg" alt="" />
+                              <img src="{% static "images/author.svg" %}" alt="" />
                             </div>
                             <div class="details">
                               <p>{{reply.name}}</p>
