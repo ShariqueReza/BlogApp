@@ -1,0 +1,367 @@
+{% extends "base.html" %}
+{% block title %}Blog | {{profile.name}}{% endblock title %}
+{% block content %}
+      <div class="container">
+        <div class="layout">
+          <!-- left layout -->
+          <div class="left">
+            <div class="page-top">
+              <div class="top flex">
+                <div class="page-name">
+                  <a href="#" class="learn">
+                    <span class="material-icons"> keyboard_return </span> Go
+                    back
+                  </a>
+                  <h1>Author</h1>
+                </div>
+              </div>
+            </div>
+
+            <center>
+              <div class="typo">
+                <h1 class="title">{{profile.user.first_name}}</h1>
+                <p>
+                  {{profile.bio}}
+                </p>
+              </div>
+            </center>
+            <section class="sp">
+              <div class="container">
+                <h1 class="sec-title">Top posts</h1>
+                <div class="grid-2 blog">
+                  <!-- card -->
+                  <a href="#">
+                    <div class="card">
+                      <div class="post-img">
+                        <img src="../images/post.png" alt="" />
+                        <div class="tag">Tag name</div>
+                      </div>
+                      <div class="card-content">
+                        <h3>
+                          A blog title and other stuffs will add here, also we
+                          can include.
+                        </h3>
+                        <div class="author">
+                          <div class="profile-pic">
+                            <img src="../images/author.svg" alt="" />
+                          </div>
+                          <div class="details">
+                            <p>Author name</p>
+                            <small>June 20, 2022</small>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                  <!-- card end-->
+                  <!-- card -->
+                  <a href="#">
+                    <div class="card">
+                      <div class="post-img">
+                        <img src="../images/post.png" alt="" />
+                        <div class="tag">Tag name</div>
+                      </div>
+                      <div class="card-content">
+                        <h3>
+                          A blog title and other stuffs will add here, also we
+                          can include.
+                        </h3>
+                        <div class="author">
+                          <div class="profile-pic">
+                            <img src="../images/author.svg" alt="" />
+                          </div>
+                          <div class="details">
+                            <p>Author name</p>
+                            <small>June 20, 2022</small>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                  <!-- card end-->
+                </div>
+              </div>
+            </section>
+            <section class="sp">
+              <div class="container">
+                <h1 class="sec-title">Treandy</h1>
+                <div class="grid-3 blog-grid">
+                  <!-- card -->
+                  <a href="#">
+                    <div class="card">
+                      <div class="post-img">
+                        <img src="../images/post.png" alt="" />
+                        <div class="tag">Tag name</div>
+                      </div>
+                      <div class="card-content">
+                        <h3>
+                          A blog title and other stuffs will add here, also we
+                          can include.
+                        </h3>
+                        <div class="author">
+                          <div class="profile-pic">
+                            <img src="../images/author.svg" alt="" />
+                          </div>
+                          <div class="details">
+                            <p>Author name</p>
+                            <small>June 20, 2022</small>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                  <!-- card end-->
+                  <!-- card -->
+                  <a href="#">
+                    <div class="card">
+                      <div class="post-img">
+                        <img src="../images/post.png" alt="" />
+                        <div class="tag">Tag name</div>
+                      </div>
+                      <div class="card-content">
+                        <h3>
+                          A blog title and other stuffs will add here, also we
+                          can include.
+                        </h3>
+                        <div class="author">
+                          <div class="profile-pic">
+                            <img src="../images/author.svg" alt="" />
+                          </div>
+                          <div class="details">
+                            <p>Author name</p>
+                            <small>June 20, 2022</small>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                  <!-- card end-->
+                  <!-- card -->
+                  <a href="#">
+                    <div class="card">
+                      <div class="post-img">
+                        <img src="../images/post.png" alt="" />
+                        <div class="tag">Tag name</div>
+                      </div>
+                      <div class="card-content">
+                        <h3>
+                          A blog title and other stuffs will add here, also we
+                          can include.
+                        </h3>
+                        <div class="author">
+                          <div class="profile-pic">
+                            <img src="../images/author.svg" alt="" />
+                          </div>
+                          <div class="details">
+                            <p>Author name</p>
+                            <small>June 20, 2022</small>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                  <!-- card end-->
+                </div>
+                <center>
+                  <button class="btn btn-primary rounded view">
+                    View more
+                    <span class="material-icons"> trending_flat </span>
+                  </button>
+                </center>
+              </div>
+            </section>
+            <section class="sp">
+              <div class="container">
+                <h1 class="sec-title">Featueal</h1>
+                <div class="grid-3 blog-grid">
+                  <!-- card -->
+                  <a href="#">
+                    <div class="card">
+                      <div class="post-img">
+                        <img src="../images/post.png" alt="" />
+                        <div class="tag">Tag name</div>
+                      </div>
+                      <div class="card-content">
+                        <h3>
+                          A blog title and other stuffs will add here, also we
+                          can include.
+                        </h3>
+                        <div class="author">
+                          <div class="profile-pic">
+                            <img src="../images/author.svg" alt="" />
+                          </div>
+                          <div class="details">
+                            <p>Author name</p>
+                            <small>June 20, 2022</small>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                  <!-- card end-->
+                  <!-- card -->
+                  <a href="#">
+                    <div class="card">
+                      <div class="post-img">
+                        <img src="../images/post.png" alt="" />
+                        <div class="tag">Tag name</div>
+                      </div>
+                      <div class="card-content">
+                        <h3>
+                          A blog title and other stuffs will add here, also we
+                          can include.
+                        </h3>
+                        <div class="author">
+                          <div class="profile-pic">
+                            <img src="../images/author.svg" alt="" />
+                          </div>
+                          <div class="details">
+                            <p>Author name</p>
+                            <small>June 20, 2022</small>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                  <!-- card end-->
+                  <!-- card -->
+                  <a href="#">
+                    <div class="card">
+                      <div class="post-img">
+                        <img src="../images/post.png" alt="" />
+                        <div class="tag">Tag name</div>
+                      </div>
+                      <div class="card-content">
+                        <h3>
+                          A blog title and other stuffs will add here, also we
+                          can include.
+                        </h3>
+                        <div class="author">
+                          <div class="profile-pic">
+                            <img src="../images/author.svg" alt="" />
+                          </div>
+                          <div class="details">
+                            <p>Author name</p>
+                            <small>June 20, 2022</small>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                  <!-- card end-->
+                </div>
+                <center>
+                  <button class="btn btn-primary rounded view">
+                    View more
+                    <span class="material-icons"> trending_flat </span>
+                  </button>
+                </center>
+              </div>
+            </section>
+          </div>
+          <!-- left layout end -->
+
+          <!-- right layout -->
+          <div class="right">
+            <div class="block">
+              <h2 class="title2">Top Authors</h2>
+              <div class="recent-post other-author">
+                <div class="rounded-img">
+                  <img src="../images/post.png" alt="" />
+                </div>
+                <div class="recent-content">
+                  <h3>
+                    A blog title and other stuffs will add here, also we can
+                    incluse.
+                  </h3>
+                  <a class="learn" href="#"
+                    >Learn more
+                    <span class="material-icons"> trending_flat </span></a
+                  >
+                </div>
+              </div>
+              <div class="recent-post other-author">
+                <div class="rounded-img">
+                  <img src="../images/post.png" alt="" />
+                </div>
+                <div class="recent-content">
+                  <h3>
+                    A blog title and other stuffs will add here, also we can
+                    incluse.
+                  </h3>
+                  <a class="learn" href="#"
+                    >Learn more
+                    <span class="material-icons"> trending_flat </span></a
+                  >
+                </div>
+              </div>
+              <div class="recent-post other-author">
+                <div class="rounded-img">
+                  <img src="../images/post.png" alt="" />
+                </div>
+                <div class="recent-content">
+                  <h3>
+                    A blog title and other stuffs will add here, also we can
+                    incluse.
+                  </h3>
+                  <a class="learn" href="#"
+                    >Learn more
+                    <span class="material-icons"> trending_flat </span></a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="block">
+              <h2 class="title2">Other Authors</h2>
+              <div class="recent-post other-author">
+                <div class="rounded-img">
+                  <img src="../images/post.png" alt="" />
+                </div>
+                <div class="recent-content">
+                  <h3>
+                    A blog title and other stuffs will add here, also we can
+                    incluse.
+                  </h3>
+                  <a class="learn" href="#"
+                    >Learn more
+                    <span class="material-icons"> trending_flat </span></a
+                  >
+                </div>
+              </div>
+              <div class="recent-post other-author">
+                <div class="rounded-img">
+                  <img src="../images/post.png" alt="" />
+                </div>
+                <div class="recent-content">
+                  <h3>
+                    A blog title and other stuffs will add here, also we can
+                    incluse.
+                  </h3>
+                  <a class="learn" href="#"
+                    >Learn more
+                    <span class="material-icons"> trending_flat </span></a
+                  >
+                </div>
+              </div>
+              <div class="recent-post other-author">
+                <div class="rounded-img">
+                  <img src="../images/post.png" alt="" />
+                </div>
+                <div class="recent-content">
+                  <h3>
+                    A blog title and other stuffs will add here, also we can
+                    incluse.
+                  </h3>
+                  <a class="learn" href="#"
+                    >Learn more
+                    <span class="material-icons"> trending_flat </span></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- right layout end -->
+        </div>
+      </div>
+      {% endblock content %}
