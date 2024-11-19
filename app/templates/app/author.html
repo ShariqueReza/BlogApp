@@ -100,94 +100,6 @@
                 </center>
               </div>
             </section>
-            <section class="sp">
-              <div class="container">
-                <h1 class="sec-title">Featueal</h1>
-                <div class="grid-3 blog-grid">
-                  <!-- card -->
-                  <a href="#">
-                    <div class="card">
-                      <div class="post-img">
-                        <img src="../images/post.png" alt="" />
-                        <div class="tag">Tag name</div>
-                      </div>
-                      <div class="card-content">
-                        <h3>
-                          A blog title and other stuffs will add here, also we
-                          can include.
-                        </h3>
-                        <div class="author">
-                          <div class="profile-pic">
-                            <img src="../images/author.svg" alt="" />
-                          </div>
-                          <div class="details">
-                            <p>Author name</p>
-                            <small>June 20, 2022</small>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </a>
-                  <!-- card end-->
-                  <!-- card -->
-                  <a href="#">
-                    <div class="card">
-                      <div class="post-img">
-                        <img src="../images/post.png" alt="" />
-                        <div class="tag">Tag name</div>
-                      </div>
-                      <div class="card-content">
-                        <h3>
-                          A blog title and other stuffs will add here, also we
-                          can include.
-                        </h3>
-                        <div class="author">
-                          <div class="profile-pic">
-                            <img src="../images/author.svg" alt="" />
-                          </div>
-                          <div class="details">
-                            <p>Author name</p>
-                            <small>June 20, 2022</small>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </a>
-                  <!-- card end-->
-                  <!-- card -->
-                  <a href="#">
-                    <div class="card">
-                      <div class="post-img">
-                        <img src="../images/post.png" alt="" />
-                        <div class="tag">Tag name</div>
-                      </div>
-                      <div class="card-content">
-                        <h3>
-                          A blog title and other stuffs will add here, also we
-                          can include.
-                        </h3>
-                        <div class="author">
-                          <div class="profile-pic">
-                            <img src="../images/author.svg" alt="" />
-                          </div>
-                          <div class="details">
-                            <p>Author name</p>
-                            <small>June 20, 2022</small>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </a>
-                  <!-- card end-->
-                </div>
-                <center>
-                  <button class="btn btn-primary rounded view">
-                    View more
-                    <span class="material-icons"> trending_flat </span>
-                  </button>
-                </center>
-              </div>
-            </section>
           </div>
           <!-- left layout end -->
 
@@ -195,100 +107,21 @@
           <div class="right">
             <div class="block">
               <h2 class="title2">Top Authors</h2>
+              {% for author in top_authors %}
               <div class="recent-post other-author">
                 <div class="rounded-img">
-                  <img src="../images/post.png" alt="" />
+                  <img src="{{author.profile.profile_image.url}}" alt="" />
                 </div>
                 <div class="recent-content">
                   <h3>
-                    A blog title and other stuffs will add here, also we can
-                    incluse.
+                    {{author.first_name}}
                   </h3>
-                  <a class="learn" href="#"
-                    >Learn more
+                  <a class="learn" href="{% url "author_page" author.profile.slug %}">Learn more
                     <span class="material-icons"> trending_flat </span></a
                   >
                 </div>
               </div>
-              <div class="recent-post other-author">
-                <div class="rounded-img">
-                  <img src="../images/post.png" alt="" />
-                </div>
-                <div class="recent-content">
-                  <h3>
-                    A blog title and other stuffs will add here, also we can
-                    incluse.
-                  </h3>
-                  <a class="learn" href="#"
-                    >Learn more
-                    <span class="material-icons"> trending_flat </span></a
-                  >
-                </div>
-              </div>
-              <div class="recent-post other-author">
-                <div class="rounded-img">
-                  <img src="../images/post.png" alt="" />
-                </div>
-                <div class="recent-content">
-                  <h3>
-                    A blog title and other stuffs will add here, also we can
-                    incluse.
-                  </h3>
-                  <a class="learn" href="#"
-                    >Learn more
-                    <span class="material-icons"> trending_flat </span></a
-                  >
-                </div>
-              </div>
-            </div>
-
-            <div class="block">
-              <h2 class="title2">Other Authors</h2>
-              <div class="recent-post other-author">
-                <div class="rounded-img">
-                  <img src="../images/post.png" alt="" />
-                </div>
-                <div class="recent-content">
-                  <h3>
-                    A blog title and other stuffs will add here, also we can
-                    incluse.
-                  </h3>
-                  <a class="learn" href="#"
-                    >Learn more
-                    <span class="material-icons"> trending_flat </span></a
-                  >
-                </div>
-              </div>
-              <div class="recent-post other-author">
-                <div class="rounded-img">
-                  <img src="../images/post.png" alt="" />
-                </div>
-                <div class="recent-content">
-                  <h3>
-                    A blog title and other stuffs will add here, also we can
-                    incluse.
-                  </h3>
-                  <a class="learn" href="#"
-                    >Learn more
-                    <span class="material-icons"> trending_flat </span></a
-                  >
-                </div>
-              </div>
-              <div class="recent-post other-author">
-                <div class="rounded-img">
-                  <img src="../images/post.png" alt="" />
-                </div>
-                <div class="recent-content">
-                  <h3>
-                    A blog title and other stuffs will add here, also we can
-                    incluse.
-                  </h3>
-                  <a class="learn" href="#"
-                    >Learn more
-                    <span class="material-icons"> trending_flat </span></a
-                  >
-                </div>
-              </div>
+              {% endfor %}
             </div>
           </div>
           <!-- right layout end -->
