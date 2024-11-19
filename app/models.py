@@ -3,6 +3,11 @@ from django.utils.text import slugify
 from django.contrib.auth.models import User
 
 # Create your models here.
+
+class Subscribe(models.Model):
+    email=models.EmailField(max_length=100)
+    date=models.DateTimeField(auto_now=True)
+
 class Tag(models.Model):
     name=models.CharField(max_length=100)
     description=models.CharField(max_length=100)
@@ -36,6 +41,3 @@ class Comments(models.Model):
     #for reply of the particular comment
     parent=models.ForeignKey('self',on_delete=models.DO_NOTHING,null=True,blank=True,related_name='replies')
 
-class Subscribe(models.Model):
-    email=models.EmailField(max_length=100)
-    date=models.DateTimeField(auto_now=True)
