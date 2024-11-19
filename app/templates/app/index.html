@@ -32,29 +32,27 @@
       {% if featured_blog %}
     <section class="sp">
       <div class="container">
+        <a href="{% url "post_page" featured_blog.slug %}">
         <div class="grid-2">
           <div class="post-img">
-            <img src="{{featured_blogs.image.url}}" alt="" />
+            <img src="{{featured_blog.image.url}}" alt="" />
           </div>
           <div class="post-content">
             <div class="cetagory">
               <p>Category name</p>
             </div>
             <h1>
-              Lorem ipsum began as scrambled, nonsensical Latin derived from
-              Cicero's 1st-century BC text.
+              {{featured_blog.title}}
             </h1>
             <p class="des">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure
-              ullam animi repellat non ut delectus culpa! Iste quia corporis
-              illum doloribus facilis quo totam eveniet sapiente odit
-              cupiditate? Cumque, nam?
+              {{featured_blog.content|truncatechars:200}}
             </p>
             <a class="learn" href="#"
               >Learn more <span class="material-icons"> trending_flat </span></a
             >
           </div>
         </div>
+      </a>
       </div>
     </section>
     {% endif %}
