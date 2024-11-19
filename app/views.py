@@ -64,5 +64,6 @@ def post_page(request,slug):
 def tag_page(request,slug):
     tag=Tag.objects.get(slug=slug)
     top_posts=Post.objects.filter(tags__in=[tag.id]).order_by('-view_count')[0:2]
-    context={'tag':tag,'top_posts':top_posts}
+    recent_posts=Post.objects.filter(tags__in=[tag.id]).order_by('-last_updates')[0:2]
+    context={'tag':tag,'top_posts':top_posts,'recent_posts':recent_posts}
     return render(request,'app/tag.html',context)
