@@ -6,9 +6,9 @@
         <center>
           <div class="search-bar">
             <input type="text" placeholder="Search" />
-            <div class="animated-search" onclick="searchbar()">
+            <a href="{% url "search" %}" class="animated-search" onclick="searchbar()">
               <i class="uil uil-search"></i>
-            </div>
+            </a>
           </div>
           <div class="typo">
             <h1 class="title">Website blog title</h1>
@@ -78,7 +78,7 @@
                   </div>
                   <div class="details">
                     <p>{{post.author.first_name}}</p>
-                    <small>{{post.last_updates|date}}</small>
+                    <small>{{post.last_updated|date}}</small>
                   </div>
                 </div>
               </div>
