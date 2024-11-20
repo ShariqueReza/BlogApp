@@ -57,3 +57,7 @@ class Comments(models.Model):
     #for reply of the particular comment
     parent=models.ForeignKey('self',on_delete=models.DO_NOTHING,null=True,blank=True,related_name='replies')
 
+class WebsiteMeta(models.Model):
+    title=models.CharField(max_length=200)
+    description=models.CharField(max_length=500)
+    about=models.TextField()
