@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title %}Blog | Search{% endblock title %}
+{% block content %}
+    <main>
+      <div class="container">
+        <div class="page-top">
+          <div class="top flex">
+            <div class="page-name">
+              <a href="#" class="learn">
+                <span class="material-icons"> keyboard_return </span> Go back
+              </a>
+              <h1>Search</h1>
+            </div>
+            <form class="search-bar s-active" method="GET">
+              <input type="text" placeholder="Search" name="q" value={{search_query}} >
+              <button type="submit" class="animated-search">
+                <i class="uil uil-search"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+    <section class="sp">
+      <div class="container">
+        <div class="grid">
+            {% for post in posts %}
+          <!-- card -->
+          <a href="#">
+            <div class="card">
+              <div class="post-img">
+                <img src="{{post.image.url}}" alt="" />
+                <div class="tag">{{post.tags.all.0.name}}</div>
+              </div>
+              <div class="card-content">
+                <h3>
+                  {{post.title}}
+                </h3>
+                <div class="author">
+                  <div class="profile-pic">
+                    <img src="{{post.author.profile.profile_image.url}}" alt="" />
+                  </div>
+                  <div class="details">
+                    <p>{{post.author.first_name}}</p>
+                    <small>{{post.last_updates| date}}</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <!-- card end-->
+          {% endfor %}  
+        </div>
+      </div>
+    </section>
+    {% endblock content %} 
