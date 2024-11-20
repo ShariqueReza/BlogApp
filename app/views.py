@@ -84,6 +84,6 @@ def search_posts(request):
     search_query=''
     if request.GET.get('q'):
         search_query=request.GET.get('q')
-        posts=Post.objects.filter(title__icontains=search_query)
+    posts=Post.objects.filter(title__icontains=search_query)
     context={'posts':posts}
     return render(request,'app/search.html',context)
