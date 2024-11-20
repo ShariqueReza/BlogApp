@@ -91,3 +91,12 @@ def search_posts(request):
     posts=Post.objects.filter(title__icontains=search_query)
     context={'posts':posts,'search_query':search_query}
     return render(request,'app/search.html',context)
+
+def about(request):
+    website_info=None
+
+    if WebsiteMeta.objects.all().exists():
+        website_info=WebsiteMeta.objects.all()[0]
+
+    context={'webite_info':website_info}
+    return render(request,'app/about.html',context)
