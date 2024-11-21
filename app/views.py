@@ -101,3 +101,7 @@ def about(request):
 
     context={'webite_info':website_info}
     return render(request,'app/about.html',context)
+
+def register_user(request):
+    context={}
+    return render(request,'registration/registration.html',context)
