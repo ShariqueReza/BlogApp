@@ -36,10 +36,11 @@
           <a href="">All Posts</a>
         </div>
         <div class="action-btn">
-          {% if user.is_authenticated %}
-          <a href="{% url "logout" %}"
-            ><button class="btn btn-scoundary">Logout</button></a
-          >
+          {% if user.is_authenticated %} 
+          <form method="post" action="{% url 'logout' %}"> 
+            {% csrf_token %} 
+            <button type="submit" class="btn btn-scoundary">Logout</button> 
+          </form> 
           {% else %}        
           <a href="{% url "login" %}"
             ><button class="btn btn-scoundary">Login</button></a
