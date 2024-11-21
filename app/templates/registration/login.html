@@ -1,26 +1,23 @@
 {% extends "base.html" %}
 {% block title %}Blog | Login {% endblock  %}
 {% block content%} 
-<form action="/accounts/login/" method="post" class="form">
-    <input type="hidden" name="csrfmiddlewaretoken" value="MECR6bZJ2eTGRnFWfg7G0KPfVjCYujKLFmIfzaLgUs4DP6wEVZjzX30xS2lzZtow">
+
+<form action="{% url "login" %}" method="post" class="form">
+    {% csrf_token %}
       <center>
         <div class="logo f-logo">
           <i class="fa-brands fa-blogger"></i>
         </div>
-
-        
-
-
         <div class="inputs">
           <div>
           <div class="search-bar s-active input">
-            <input type="text" placeholder="Username" name="username">
+            {{form.username}}
             <div class="animated-search">
               <i class="uil uil-envelope-alt"></i>
             </div>
           </div>
           <div class="search-bar s-active input">
-            <input type="password" placeholder="Password" name="password">
+            {{form.password}}
             <div class="animated-search">
               <i class="uil uil-key-skeleton"></i>
             </div>
