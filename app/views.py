@@ -39,6 +39,13 @@ def post_page(request,slug):
     comments=Comments.objects.filter(post=post, parent=None)
     form=CommentForm()
 
+    #bookmark logic
+    bookmarked=False
+    if post.bookmarks.filter(id=request.user.id).exists():
+        bookmarked=True
+    is_bookmarked=bookmarked
+    
+
     if request.POST:
         comment_form=CommentForm(request.POST)
         if comment_form.is_valid():
@@ -66,7 +73,7 @@ def post_page(request,slug):
     else:
         post.view_count=post.view_count+1
     post.save()
-    context={'post':post,'form':form,'comments':comments}
+    context={'post':post,'form':form,'comments':comments,'is_bookmarked':is_bookmarked}
     return render(request,'app/post.html',context)
 
 def tag_page(request,slug):

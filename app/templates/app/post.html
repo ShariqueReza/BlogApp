@@ -36,12 +36,18 @@
                     <form action="{% url "bookmark_post" post.slug %}" method="POST">
                       {% csrf_token %}
                       <input type="hidden" name="post_id" value={{post.id}}>
+                      {% if is_bookmarked %}
+                      <button type="submit" class="btn btn-info">
+                        <i class="fa-solid fa-bookmark"></i>
+                        <p class="bookmark">Remove Bookmark</p>
+                      {% else %}
                       <button type="submit" class="btn btn-info">
                         <i class="uil uil-bookmark-full"></i>
                         <p class="bookmark">Bookmark</p>
                         <!-- REMOVE BOOKMARK
                           <i class="fa-solid fa-bookmark"></i> -->
                       </button>
+                      {% endif %}
                     </form>
                   </div>
                 </div>
