@@ -1,10 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from app.models import Post,Comments,Tag,Profile,WebsiteMeta
 from app.forms import CommentForm,SubscribeForm,NewUserForm
 from django.urls import reverse
 from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.db.models import Count
+from django.contrib.auth import login
 
 # Create your views here.
 def index(request):
@@ -104,5 +105,13 @@ def about(request):
 
 def register_user(request):
     form=NewUserForm()
+
+    if request.method == "POST":
+        form=NewUserForm(request.POST)
+        if form.is_valid():
+            user=form.save()
+            login(request, user)
+            return redirect("/")
+
     context={'form':form}
     return render(request,'registration/registration.html',context)

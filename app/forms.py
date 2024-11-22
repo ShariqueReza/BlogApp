@@ -24,10 +24,11 @@ class SubscribeForm(forms.ModelForm):
     def __init__(self,*args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['email'].widget.attrs['placeholder']='Type your email....'
+
 class NewUserForm(UserCreationForm):
     class Meta:
         model=User
-        fields={'username','email','password1','password2'}
+        fields=('username','email','password1','password2')
 
     def __init__(self,*args, **kwargs):
         super().__init__(*args, **kwargs)
