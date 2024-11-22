@@ -35,7 +35,7 @@
                   <div class="track">
                     <form action="{% url "bookmark_post" post.slug %}" method="POST">
                       {% csrf_token %}
-                      <input type="hidden" name="post.id" value={{post.id}}>
+                      <input type="hidden" name="post_id" value={{post.id}}>
                       <button type="submit" class="btn btn-info">
                         <i class="uil uil-bookmark-full"></i>
                         <p class="bookmark">Bookmark</p>
