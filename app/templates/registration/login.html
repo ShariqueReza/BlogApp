@@ -20,13 +20,13 @@
         <div class="inputs">
           <div>
           <div class="search-bar s-active input">
-            {{form.username}}
+            <input type="text" placeholder="Username" name="username">
             <div class="animated-search">
               <i class="uil uil-envelope-alt"></i>
             </div>
           </div>
           <div class="search-bar s-active input">
-            {{form.password}}
+            <input type="password" placeholder="Password" name="password">
             <div class="animated-search">
               <i class="uil uil-key-skeleton"></i>
             </div>
@@ -37,7 +37,7 @@
           <button class="btn btn-primary rounded" type="submit">
             Login <span class="material-icons"> arrow_right_alt </span>
           </button>
-          <p>Not have an account? <a href="signup.html">Sign up</a></p>
+          <p>Not have an account? <a href="{% url "register" %}">Sign up</a></p>
         </div>
       </center>
     </form>
