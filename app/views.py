@@ -125,5 +125,9 @@ def register_user(request):
 
 def bookmark_post(request,slug):
     post=get_object_or_404(Post,id=request.POST.get('post_id'))
-    post.bookmarks.add(request.user)
+
+    if post.bookmarks.filter(id=request.user.id).exists():
+        post.bookmarks.remove(request.user)
+    else:
+        post.bookmarks.add(request.user)
     return HttpResponseRedirect(reverse('post_page',args=[str(slug)]))
