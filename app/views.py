@@ -1,4 +1,4 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect,get_object_or_404
 from app.models import Post,Comments,Tag,Profile,WebsiteMeta
 from app.forms import CommentForm,SubscribeForm,NewUserForm
 from django.urls import reverse
@@ -115,3 +115,8 @@ def register_user(request):
 
     context={'form':form}
     return render(request,'registration/registration.html',context)
+
+def bookmark_post(request,slug):
+    post=get_object_or_404(Post,id=request.POST.get('post_id'))
+    post.bookmarks.add(request.user)
+    return HttpResponseRedirect(reverse('post'),args=[str(slug)])
