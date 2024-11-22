@@ -46,6 +46,7 @@ class Post(models.Model):
     is_featured=models.BooleanField(default=False)
     author=models.ForeignKey(User,on_delete=models.CASCADE,null=True,blank=True)
     bookmarks=models.ManyToManyField(User,related_name="booksmarks",default=None,blank=True)
+    likes=models.ManyToManyField(User,related_name="post_likes",default=None,blank=True)
 
 class Comments(models.Model):
     content=models.TextField()
