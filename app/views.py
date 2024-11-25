@@ -44,6 +44,12 @@ def post_page(request,slug):
     if post.bookmarks.filter(id=request.user.id).exists():
         bookmarked=True
     is_bookmarked=bookmarked
+
+    #liked logic
+    liked=False
+    if post.likes.filter(id=request.user.id).exists():
+        liked=True
+    post_is_liked=liked
     
 
     if request.POST:
@@ -73,7 +79,7 @@ def post_page(request,slug):
     else:
         post.view_count=post.view_count+1
     post.save()
-    context={'post':post,'form':form,'comments':comments,'is_bookmarked':is_bookmarked}
+    context={'post':post,'form':form,'comments':comments,'is_bookmarked':is_bookmarked,'post_is_liked':post_is_liked}
     return render(request,'app/post.html',context)
 
 def tag_page(request,slug):
