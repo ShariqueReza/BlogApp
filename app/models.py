@@ -48,6 +48,9 @@ class Post(models.Model):
     bookmarks=models.ManyToManyField(User,related_name="booksmarks",default=None,blank=True)
     likes=models.ManyToManyField(User,related_name="post_likes",default=None,blank=True)
 
+    def number_of_likes(self):
+        return self.likes.count()
+
 class Comments(models.Model):
     content=models.TextField()
     date=models.DateTimeField(auto_now=True)
