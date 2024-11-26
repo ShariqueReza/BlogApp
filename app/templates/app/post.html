@@ -243,57 +243,32 @@
 
             <div class="block r-blog">
               <h2 class="title2">Related Blogs</h2>
+              {% for post in related_posts  %}
               <!-- card -->
-              <a href="#">
+              <a href="{% url "post_page" post.slug %}">
                 <div class="card">
                   <div class="post-img">
-                    <img src="../images/post.png" alt="" />
-                    <div class="tag">Tag name</div>
+                    <img src="{{post.image.url}}" alt="" />
+                    <div class="tag">{{post.tags.all.0.name}}</div>
                   </div>
                   <div class="card-content">
                     <h3>
-                      A blog title and other stuffs will add here, also we can
-                      include.
+                      {{post.title}}
                     </h3>
                     <div class="author">
                       <div class="profile-pic">
-                        <img src="../images/author.svg" alt="" />
+                        <img src="{{post.author.profile.profile_image.url}}" alt="" />
                       </div>
                       <div class="details">
-                        <p>Author name</p>
-                        <small>June 20, 2022</small>
+                        <p>{{post.author.first_name}}</p>
+                        <small>{{post.last_updates|date}}</small>
                       </div>
                     </div>
                   </div>
                 </div>
               </a>
               <!-- card end-->
-
-              <!-- card -->
-              <a href="#">
-                <div class="card">
-                  <div class="post-img">
-                    <img src="../images/post.png" alt="" />
-                    <div class="tag">Tag name</div>
-                  </div>
-                  <div class="card-content">
-                    <h3>
-                      A blog title and other stuffs will add here, also we can
-                      include.
-                    </h3>
-                    <div class="author">
-                      <div class="profile-pic">
-                        <img src="../images/author.svg" alt="" />
-                      </div>
-                      <div class="details">
-                        <p>Author name</p>
-                        <small>June 20, 2022</small>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </a>
-              <!-- card end-->
+              {% endfor %}
             </div>
             <div class="block">
               <h2 class="title2">Top category</h2>
