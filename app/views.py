@@ -150,7 +150,7 @@ def like_post(request,slug):
     return HttpResponseRedirect(reverse('post_page',args=[str(slug)]))
 
 def all_bookmarked_posts(request):
-    all_bookmarked_posts=Post.objects.filter(bookmarks=request.user)
+    all_bookmarked_posts=Post.objects.filter(bookmarks=request.user.id)
     context={'all_bookmarked_posts':all_bookmarked_posts}
     return render(request,'app/all_bookmarked_posts.html',context)
 
@@ -160,7 +160,7 @@ def all_posts(request):
     return render(request,'app/all_posts.html',context)
 
 def all_liked_posts(request):
-    all_liked_posts=Post.objects.filter(likes=request.user)
+    all_liked_posts=Post.objects.filter(likes=request.user.id)
     context={'all_liked_posts':all_liked_posts}
     return render(request,'app/all_liked_posts.html',context)
 
