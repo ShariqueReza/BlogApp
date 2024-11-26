@@ -271,49 +271,23 @@
               {% endfor %}
             </div>
             <div class="block">
-              <h2 class="title2">Top category</h2>
-              <div class="card">
-                <h3>
-                  A blog title and other stuffs will add here, lso we can
-                  incluse.
-                </h3>
-                <p>
-                  Lorem ipsum began as scrambled, nonsensical Latin derived from
-                  Cicero's 1st-century BC text De Finibus Bonorum et Malorum.
-                </p>
-                <a class="learn" href="#"
-                  >Learn more
-                  <span class="material-icons"> trending_flat </span></a
-                >
+              <h2 class="title2">Top Author</h2>
+              {% for author in top_authors %}
+              <div class="recent-post">
+                <div class="rounded-img">
+                  <img src="{{author.profile.profile_image.url}}" alt="" />
+                </div>
+                <div class="recent-content">
+                  <h3>
+                    {{author.first_name}}
+                  </h3>
+                  <a class="learn" href="{% url "author_page" author.profile.slug %}"
+                    >Learn more
+                    <span class="material-icons"> trending_flat </span></a
+                  >
+                </div>
               </div>
-              <div class="card">
-                <h3>
-                  A blog title and other stuffs will add here, lso we can
-                  incluse.
-                </h3>
-                <p>
-                  Lorem ipsum began as scrambled, nonsensical Latin derived from
-                  Cicero's 1st-century BC text De Finibus Bonorum et Malorum.
-                </p>
-                <a class="learn" href="#"
-                  >Learn more
-                  <span class="material-icons"> trending_flat </span></a
-                >
-              </div>
-              <div class="card">
-                <h3>
-                  A blog title and other stuffs will add here, lso we can
-                  incluse.
-                </h3>
-                <p>
-                  Lorem ipsum began as scrambled, nonsensical Latin derived from
-                  Cicero's 1st-century BC text De Finibus Bonorum et Malorum.
-                </p>
-                <a class="learn" href="#"
-                  >Learn more
-                  <span class="material-icons"> trending_flat </span></a
-                >
-              </div>
+              {% endfor %}
             </div>
             <div class="block">
               <h2 class="title2">Top Tags</h2>
