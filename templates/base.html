@@ -33,9 +33,9 @@
         <div class="links">
           <a href="{% url "index" %}">Home</a>
           <a href="{% url "about" %}">About</a>
-          <a href="">All Posts</a>
+          <a href="{% url "all_posts" %}">All Posts</a>
           {% if user.is_authenticated %} 
-          <a href="{% url "all_bookmarked_posts" %}">Bookmarks</a>
+          <a href="{% url "all_bookmarked_posts" %}">Bookmarked Posts</a>
           {% endif %} 
         </div>
         <div class="action-btn">
