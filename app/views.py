@@ -152,4 +152,4 @@ def like_post(request,slug):
 def all_bookmarked_posts(request):
     all_bookmarked_posts=Post.objects.filter(bookmarks=request.user)
     context={'all_bookmarked_posts':all_bookmarked_posts}
-    return render(request,'blogapp/all_bookmarked_posts.html',context)
+    return render(request,'app/all_bookmarked_posts.html',context)
