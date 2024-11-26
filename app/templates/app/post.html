@@ -223,51 +223,22 @@
           <div class="right">
             <div class="block">
               <h2 class="title2">Most recent</h2>
+              {% for post in recent_posts %}
               <div class="recent-post">
                 <div class="rounded-img">
-                  <img src="../images/post.png" alt="" />
+                  <img src="{{post.image.url}}" alt="" />
                 </div>
                 <div class="recent-content">
                   <h3>
-                    A blog title and other stuffs will add here, also we can
-                    incluse.
+                    {{post.title}}
                   </h3>
-                  <a class="learn" href="#"
+                  <a class="learn" href="{% url "post_page" post.slug %}"
                     >Learn more
                     <span class="material-icons"> trending_flat </span></a
                   >
                 </div>
               </div>
-              <div class="recent-post">
-                <div class="rounded-img">
-                  <img src="../images/post.png" alt="" />
-                </div>
-                <div class="recent-content">
-                  <h3>
-                    A blog title and other stuffs will add here, also we can
-                    incluse.
-                  </h3>
-                  <a class="learn" href="#"
-                    >Learn more
-                    <span class="material-icons"> trending_flat </span></a
-                  >
-                </div>
-              </div>
-              <div class="recent-post">
-                <div class="rounded-img">
-                  <img src="../images/post.png" alt="" />
-                </div>
-                <div class="recent-content">
-                  <h3>
-                    A blog title and other stuffs will add here, also we can
-                    incluse.
-                  </h3>
-                  <a class="learn" href="#"
-                    >Learn more
-                    <span class="material-icons"> trending_flat </span></a
-                  >
-                </div>
-              </div>
+              {% endfor %}
             </div>
 
             <div class="block r-blog">
