@@ -292,17 +292,9 @@
             <div class="block">
               <h2 class="title2">Top Tags</h2>
               <div class="blog-tags">
-                <div class="tag">Tag</div>
-                <div class="tag">Tag content</div>
-                <div class="tag">Tag</div>
-                <div class="tag">Tag content</div>
-                <div class="tag">Tag content</div>
-                <div class="tag">Tag</div>
-                <div class="tag">Tag content</div>
-                <div class="tag">Tag content</div>
-                <div class="tag">Tag</div>
-                <div class="tag">Tag content</div>
-                <div class="tag">Tag</div>
+                {% for tag in tags %}
+                <div href="{% url "tag_page" tag.slug%}" class="tag">{{tag.name}}</div>
+                {% endfor %}
               </div>
             </div>
           </div>
