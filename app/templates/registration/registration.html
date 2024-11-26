@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% block title %}Blog | Registration{% endblock title %}
+{% block content %}
+    
+      <div class="container">
+        <div class="page-name">
+          <a href="#" class="learn">
+            <span class="material-icons"> keyboard_return </span> Go back
+          </a>
+          <h1>Sign Up</h1>
+        </div>
+
+        <form method="POST" class="form">
+        {% csrf_token %}
+          <center>
+            <div class="logo f-logo">
+              <i class="fa-brands fa-blogger"></i>
+            </div>
+
+            {% if form.non_field_errors %}
+                {% for error in form.non_field_errors %}
+                <div class="field-error">
+                    <p>{{error}}</p>
+                </div>
+                {% endfor %}
+            {% endif %}
+
+
+            <div class="inputs">
+              <div>
+                <div class="search-bar s-active input">
+                  {{form.username}}
+                  <div class="animated-search">
+                    <i class="uil uil-user"></i>
+                  </div>
+                </div>
+                {% if form.username.errors %}
+                <div class="field-error">
+                  <p>{{form.username.errors.as_text}}</p>
+                </div>
+                {% endif %}
+              </div>
+
+              <div>
+                <div class="search-bar s-active input">
+                    {{form.email}}
+                  <div class="animated-search">
+                    <i class="uil uil-envelope-alt"></i>
+                  </div>
+                </div>
+                {% if form.email.errors %}
+                <div class="field-error">
+                  <p>{{form.email.errors.as_text}}</p>
+                </div>
+                {% endif %}
+              </div>
+
+              <div>
+                <div class="search-bar s-active input">
+                  {{form.password1}}
+                  <div class="animated-search">
+                    <i class="uil uil-key-skeleton"></i>
+                  </div>
+                </div>
+                {% if form.password.errors %}
+                <div class="field-error">
+                  <p>{{form.password.errors.as_text}}
+                  </p>
+                </div>
+                {% endif %}
+              </div>
+              <div>
+                <div class="search-bar s-active input">
+                    {{form.password2}}
+                  <div class="animated-search">
+                    <i class="uil uil-key-skeleton"></i>
+                  </div>
+                </div>
+                {% if form.password.errors %}
+                <div class="field-error">
+                  <p>
+                    {{form.password.errors.as_text}}
+                  </p>
+                </div>
+                {% endif %}
+              </div>
+              <button class="btn btn-primary rounded">
+                SIGN UP <span class="material-icons"> arrow_right_alt </span>
+              </button>
+              <center>
+                <p>Already have an account? <a href="login.html">Login</a></p>
+              </center>
+            </div>
+          </center>
+        </form>
+      </div>
+    
+    {% endblock content %}
+    

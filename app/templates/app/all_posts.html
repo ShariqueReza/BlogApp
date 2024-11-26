@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Blog | All Posts {% endblock title %}
+{% block content %}
+
+<main>
+  <div class="container">
+    <div class="page-top">
+      <div class="top flex">
+        <div class="page-name">
+          <a href="" class="learn">
+            <span class="material-icons"> keyboard_return </span> Go back
+          </a>
+          <h1>All Posts</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<section class="sp">
+  <div class="container">
+    <div class="blog-tags">
+    {% for post in all_posts %}
+    <p class="tag">
+      <a style="color: white;" href="{% url "post_page" post.slug %}">{{post.title}}</a>
+    </p>
+    {% endfor %}
+  </div>
+  </div>
+</section>
+{% endblock content %}
+
