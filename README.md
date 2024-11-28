@@ -34,8 +34,6 @@ Fully responsive & Optimized for desktops, tablets, and mobile devices.
 Quickly find posts based on keywords.
 
 ## Contributing
-
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
 
-## License
-This project is licensed under the MIT License.
+
