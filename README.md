@@ -3,7 +3,7 @@ BlogHaven is a comprehensive and user-friendly blogging platform developed with 
 
 
 
-## Cloudflare link
+## PythonAnywhere link
 [View Live](https://sharique08.pythonanywhere.com/)
 
 
