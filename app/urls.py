@@ -14,4 +14,4 @@ urlpatterns = [
     path('all_bookmarked_posts/',views.all_bookmarked_posts,name='all_bookmarked_posts'),
     path('all_posts',views.all_posts,name='all_posts'),
     path('all_liked_posts',views.all_liked_posts,name='all_liked_posts'),
-]
+]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
