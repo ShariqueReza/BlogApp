@@ -8,7 +8,7 @@ BlogHaven is a comprehensive and user-friendly blogging platform developed with 
 
 
 ## Demonstration
-
+https://github.com/user-attachments/assets/8e8a68e0-8746-4f9e-adb4-5a8232ea544d
 
 
 ## Technologies Used
